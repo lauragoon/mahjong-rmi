@@ -1,4 +1,4 @@
-public enum TileSets
+public enum TileSet
 {
     TEN_THOUSAND,
     CIRCLE,
