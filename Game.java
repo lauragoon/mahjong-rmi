@@ -101,10 +101,10 @@ public class Game
         return True;
     }
     
-    private Boolean isThreeOfAKind(List<Tile> tiles)
+    private Boolean isNOfAKind(List<Tile> tiles, Integer n)
     {
-        // check if size is 3
-        if (tiles.size() != 3) { return False; }
+        // check if size is n
+        if (tiles.size() != n) { return False; }
         
         // check if same suit and value
         for (int i = 0; i < tiles.size()-1; i++)
@@ -113,26 +113,11 @@ public class Game
             if (tiles.get(i).getValue() != tiles.get(i+1).getValue()) { return False; }
         }
         
-        // check that it is three-of-a-kind-able
+        // check that it is n-of-a-kind-able
         TileSet thisSet = tiles.get(0).getSet();
         if (thisSet != TileSet.TEN_THOUSAND || thisSet != TileSet.CIRCLE || thisSet != TileSet.STICKS || thisSet != TileSet.WINDS || thisSet != TileSet.DRAGONS) { return False; }
         
         return True;
     }
     
-    private Boolean isPair(List<Tile> tiles)
-    {
-        // check if size is 2
-        if (tiles.size() != 2) { return False; }
-        
-        // check if same suit and value
-        if (tiles.get(0).getSet() != tiles.get(1).getSet()) { return False; }
-        if (tiles.get(0).getValue() != tiles.get(1).getValue()) { return False; }
-        
-        // check that it is pair-able
-        TileSet thisSet = tiles.get(0).getSet();
-        if (thisSet != TileSet.TEN_THOUSAND || thisSet != TileSet.CIRCLE || thisSet != TileSet.STICKS || thisSet != TileSet.WINDS || thisSet != TileSet.DRAGONS) { return False; }
-        
-        return True;
-    }
 }
