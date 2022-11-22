@@ -1,10 +1,14 @@
-public class Tile {
+public class Tile
+{
     private TileSet set;
     private TileValue value;
-
-    public void setSet(TileSet set) { this.set = set; }
-    public TileSet getSet() { return set; }
     
-    public void setValue(TileValue value) { this.value = value; }
+    public Tile(TileSet set, TileValue value)
+    {
+        this.set = set;
+        this.value = value;
+    }
+    
+    public TileSet getSet() { return set; }
     public TileValue getValue() { return value; }
 }
